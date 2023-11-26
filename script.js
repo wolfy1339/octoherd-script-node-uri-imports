@@ -60,7 +60,7 @@ export async function script(octokit, repository) {
           changes.files[entry.path] = ({ exists, encoding, content }) => {
             if (!exists) return null;
 
-            const textContent = Buffer.from(content, encoding).toString();
+            const textContent = Buffer.from(content, encoding || 'utf-8').toString();
 
             return textContent.replace(nodeModulesRegex, 'from "node:$1"');
           };
