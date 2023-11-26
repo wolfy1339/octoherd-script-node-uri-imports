@@ -11,6 +11,8 @@ const nodeModulesRegex = new RegExp(`from "(${builtinModules.join('|')})"`, 'g')
  * @param {import('@octoherd/cli').Repository} repository
  */
 export async function script(octokit, repository) {
+  if (repository.archived) return;
+
   /** @type {import('@octokit/types').OctokitResponse<import('@octokit/openapi-types').components["schemas"]["content-tree"]>} */
   // @ts-ignore Overriding the type of the response for the correct type with the `object` media type
   const { data } = await octokit.request('GET /repos/{owner}/{repo}/contents/{path}', {
