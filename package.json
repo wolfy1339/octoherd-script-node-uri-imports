@@ -1,0 +1,34 @@
+{
+  "name": "octoherd-script-node-uri-imports",
+  "version": "0.0.0-development",
+  "type": "module",
+  "exports": "./script.js",
+  "bin": {
+    "octoherd-script-node-uri-imports": "./cli.js"
+  },
+  "description": "Replace NodeJS internal module imports with `node:` specifier imports",
+  "scripts": {
+    "start": "node cli.js",
+    "test": "node script.js"
+  },
+  "repository": "https://github.com/wolfy1339/octoherd-script-node-uri-imports",
+  "keywords": [
+    "octoherd-script"
+  ],
+  "author": "wolfy1339 <webmaster@wolfy1339.com>",
+  "license": "ISC",
+  "dependencies": {
+    "@octoherd/cli": "^4.0.2",
+    "octokit-plugin-create-pull-request": "^5.1.1"
+  },
+  "release": {
+    "branches": [
+      "main"
+    ]
+  },
+  "devDependencies": {
+    "@hellomouse/eslint-config-wolfy1339": "^1.4.1",
+    "@types/node": "^20.10.0",
+    "eslint": "^8.54.0"
+  }
+}
