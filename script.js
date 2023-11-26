@@ -91,7 +91,7 @@ export async function script(octokit, repository) {
 
   if (!pr) {
     console.log(`No changes made to ${repository.owner.login}/${repository.name}`);
+  } else {
+    console.log(`PR created: ${pr.data.html_url}`);
   }
-
-  console.log(`PR created: ${pr.data.html_url}`);
 }
